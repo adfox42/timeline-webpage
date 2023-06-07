@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border: 2.5px solid #b1040e;
+  border-radius: 75px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+.panel p {
+  background-color: rgba(177, 4, 14, 0.750);
+  border: 2.5px solid #fff;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 16px;
+  position: absolute;
+  top: 80%; /* Adjust positioning value to fit within the border */
+  left: 15px;
+  right: 15px;
+  padding: 12px; /* Add padding to keep the text within the border */
+  margin: 0;
+  opacity: 0;
+  text-align: center;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3,
+.panel.active p {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.7s;
+}
+
+@media (max-width: 767px) {
+  .container {
+      display: flex;
+      flex-direction: column;
+      height: 90vh;
+      width: 90vw;
+  }
+  
+  .panel p {
+      top: 50%; /* Adjust positioning value to center the text vertically */
+      left: 0;
+      right: 0;
+      margin-left: 50%;
+      margin-right: 50%;
+      border: 2.5px solid #b1040e;
+      border-radius: 25px;
+      font-size: 12px;
+      transform: translate(-50%, -50%); /* Center the text horizontally */
+      width: 90%; /* Set width to 90% of the container */
+      max-width: 400px; /* Set a maximum width for the text */
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1100px) {
+  .container {
+      width: 100vw;
+  }
+  
+  .panel p {
+      top: 80%; /* Adjust positioning value to center the text vertically */
+      left: 0;
+      right: 0;
+      margin-left: 50%;
+      margin-right: 50%;
+      border: 2.5px solid #b1040e;
+      border-radius: 25px;
+      font-size: 14px;
+      transform: translate(-50%, -50%); /* Center the text horizontally */
+      width: 90%; /* Set width to 90% of the container */
+      max-width: 650px; /* Set a maximum width for the text */
+    }
+  }
